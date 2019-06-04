@@ -1,17 +1,59 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".fragments.MyPageFragment">
 
     <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/colorBackground">
+        android:background="@color/colorBackground"
+        android:padding="32dp">
 
-        <TextView
+        <EditText
+            android:id="@+id/editText_id"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="마이페이지" />
+            android:layout_height="wrap_content"
+            android:hint="@string/string_id"
+            android:theme="@style/EditTextStyle"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <EditText
+            android:id="@+id/editText_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/string_password"
+            android:inputType="textPassword"
+            android:theme="@style/EditTextStyle"
+            app:layout_constraintTop_toBottomOf="@+id/editText_id" />
+
+        <LinearLayout
+            android:id="@+id/layout_register"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            app:layout_constraintTop_toBottomOf="@id/editText_password">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/string_register_comment" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="4dp"
+                android:text="@string/string_register"
+                android:textColor="#33F" />
+        </LinearLayout>
+
+        <Button
+            style="@style/ButtonLogin"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/common_margin"
+            app:layout_constraintTop_toBottomOf="@+id/layout_register" />
+
 
     </android.support.constraint.ConstraintLayout>
 </layout>

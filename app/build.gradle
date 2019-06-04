@@ -4,7 +4,7 @@ android {
     compileSdkVersion 28
     defaultConfig {
         applicationId "kr.hs.dgsw.libraryproject"
-        minSdkVersion 22
+        minSdkVersion 21
         targetSdkVersion 28
         versionCode 1
         versionName "1.0"
@@ -19,10 +19,14 @@ android {
     dataBinding {
         enabled = true
     }
+    compileOptions {
+        sourceCompatibility = '1.8'
+        targetCompatibility = '1.8'
+    }
 }
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation 'com.android.support:appcompat-v7:28.0.0'
     implementation 'com.android.support:support-v4:28.0.0'
     implementation 'com.android.support:design:28.0.0'
@@ -33,4 +37,7 @@ dependencies {
     implementation 'com.squareup.retrofit2:converter-gson:2.5.0'
     implementation 'com.squareup.retrofit2:retrofit:2.5.0'
     implementation 'com.jakewharton.rxbinding2:rxbinding:2.2.0'
+    implementation 'com.android.support:cardview-v7:28.0.0'
+    implementation 'com.github.bumptech.glide:glide:4.9.0'
+    implementation 'com.github.arimorty:floatingsearchview:2.1.1'
 }

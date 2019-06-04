@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="loan"
+            type="kr.hs.dgsw.libraryproject.beans.LoanBean" />
+    </data>
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/item_loan_height"
+        android:background="@color/colorBackgroundDark">
+
+        <ImageView
+            android:id="@+id/img_book"
+            android:layout_width="72dp"
+            android:layout_height="72dp"
+            android:layout_marginStart="4dp"
+            app:imageUrl="@{loan.book.book.bookImage}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/common_margin"
+            android:layout_marginEnd="@dimen/common_margin"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/img_book"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                style="@style/EllipsizeTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@{loan.book.book.bookName}"
+                android:textColor="@color/colorOnBackground"
+                android:textSize="@dimen/text_size_loan_book_name"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@+id/layout_loan_start"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="@+id/layout_loan_end"
+                tools:text="윤성우의 열혈 C프로그래밍" />
+
+            <!-- 대출일 layout -->
+            <LinearLayout
+                android:id="@+id/layout_loan_start"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toTopOf="@+id/layout_loan_end"
+                app:layout_constraintStart_toStartOf="@+id/layout_loan_end">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/string_loan_start"
+                    android:textColor="@color/colorOnBackgroundLight"
+                    app:layout_constraintStart_toEndOf="@+id/img_book" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:textColor="@color/colorOnBackgroundLight"
+                    app:timeToString="@{loan.loanStart}"
+                    tools:text="2019-06-01" />
+            </LinearLayout>
+
+            <!-- 반납일 layout -->
+            <LinearLayout
+                android:id="@+id/layout_loan_end"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/img_book">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/string_loan_end"
+                    android:textColor="@color/colorOnBackgroundLight" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:textColor="@color/colorOnBackgroundLight"
+                    app:timeToString="@{loan.loanEnd}"
+                    tools:text="2019-06-07" />
+            </LinearLayout>
+        </LinearLayout>
+
+
+    </android.support.constraint.ConstraintLayout>
+</layout>

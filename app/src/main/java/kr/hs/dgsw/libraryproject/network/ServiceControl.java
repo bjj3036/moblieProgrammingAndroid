@@ -3,7 +3,7 @@ package kr.hs.dgsw.libraryproject.network;
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
-public class ServiceContol {
+public class ServiceControl {
     private static LibraryService libraryService;
 
     public static LibraryService getLibraryService() {

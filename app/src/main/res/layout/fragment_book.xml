@@ -1,18 +1,30 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     tools:context=".fragments.BookFragment">
 
     <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="@color/colorBackground">
+        android:background="@color/colorBackground"
+        android:paddingStart="@dimen/common_start_padding"
+        android:paddingEnd="@dimen/common_end_padding">
 
-        <!-- TODO: Update blank fragment layout -->
-        <TextView
+        <android.support.v7.widget.SearchView
+            android:id="@+id/searchView"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="책 페이지" />
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recyclerView_book"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/searchView">
+
+        </android.support.v7.widget.RecyclerView>
 
     </android.support.constraint.ConstraintLayout>
 </layout>

@@ -12,6 +12,22 @@
     <string name="string_library">도서관</string>
     <string name="string_book">책</string>
 
+    <string name="string_author">저자</string>
+    <string name="string_publisher">출판사</string>
+
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="string_libraryName_dummy">별마당 도서관</string>
+    <string name="string_closedDay_dummy">매주 월요일 및 관공서의 공휴일 (토, 일 제외)</string>
+    <string name="string_location_dummy">대구광역시 달서구 한실로 113 (도원동)</string>
+
+    <string name="string_id">아이디</string>
+    <string name="string_password">비밀번호</string>
+    <string name="string_login">로그인</string>
+    <string name="string_register">회원가입</string>
+    <string name="string_loan_start">대출일</string>
+    <string name="string_loan_end">반납일</string>
+
+    <string name="string_register_comment">회원이 아니신가요?</string>
 </resources>

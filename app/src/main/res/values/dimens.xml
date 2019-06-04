@@ -1,11 +1,25 @@
 <resources>
-    <!-- Default screen margins, per the Android Design guidelines. -->
+    <!-- WHERE_WHAT_SIZE -->
     <dimen name="activity_horizontal_margin">16dp</dimen>
     <dimen name="activity_vertical_margin">16dp</dimen>
     <dimen name="nav_header_vertical_spacing">8dp</dimen>
     <dimen name="nav_header_height">176dp</dimen>
     <dimen name="fab_margin">16dp</dimen>
 
+    <dimen name="item_book_height">80dp</dimen>
+    <dimen name="item_loan_height">80dp</dimen>
+
     <dimen name="common_start_padding">8dp</dimen>
     <dimen name="common_end_padding">8dp</dimen>
+    <dimen name="common_margin">8dp</dimen>
+
+    <dimen name="common_shadow_size">2dp</dimen>
+
+    <dimen name="libraryCardView_height">320dp</dimen>
+
+    <dimen name="text_size_loan_book_name">20sp</dimen>
+    <dimen name="text_size_library_name">28sp</dimen>
+    <dimen name="text_size_library_info">16sp</dimen>
+
+    <dimen name="ellipsize_maxWidth">80dp</dimen>
 </resources>

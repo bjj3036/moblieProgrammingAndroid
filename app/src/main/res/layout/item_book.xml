@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="book"
+            type="kr.hs.dgsw.libraryproject.beans.BookBean" />
+    </data>
+
+    <android.support.v7.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/item_book_height"
+        android:layout_marginBottom="@dimen/common_margin"
+        app:cardBackgroundColor="@color/colorBackgroundDark"
+        app:cardElevation="@dimen/common_shadow_size">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <View
+                android:id="@+id/back_img_book"
+                android:layout_width="60dp"
+                android:layout_height="@dimen/item_book_height"
+                android:background="@color/colorAccent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+            <!-- 책 이미지 -->
+            <ImageView
+                android:id="@+id/img_book"
+                android:layout_width="56dp"
+                android:layout_height="76dp"
+                android:scaleType="centerCrop"
+                app:imageUrl="@{book.bookImage}"
+                app:layout_constraintStart_toStartOf="@+id/back_img_book"
+                app:layout_constraintEnd_toEndOf="@+id/back_img_book"
+                app:layout_constraintTop_toTopOf="@+id/back_img_book"
+                app:layout_constraintBottom_toBottomOf="@+id/back_img_book"
+                app:srcCompat="@drawable/library_example" />
+
+            <!-- 책 이름 -->
+            <TextView
+                android:id="@+id/txt_book_name"
+                style="@style/EllipsizeTextView"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="@dimen/common_margin"
+                android:text="@{book.bookName}"
+                android:textColor="@color/colorOnBackground"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@+id/img_book"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.35"
+                tools:text="윤성우의 열혈 C 프로그래밍" />
+
+            <!-- 책 저자 -->
+            <LinearLayout
+                android:id="@+id/layout_author"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintStart_toStartOf="@+id/txt_book_name"
+                app:layout_constraintTop_toBottomOf="@+id/txt_book_name">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/string_author"
+                    android:textColor="@color/colorOnBackgroundLight" />
+
+                <TextView
+                    style="@style/EllipsizeTextView"
+                    android:layout_width="@dimen/ellipsize_maxWidth"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:text="@{book.author}"
+                    android:textColor="@color/colorOnBackgroundLight"
+                    tools:text="윤성우" />
+            </LinearLayout>
+
+            <!-- 책 출판사 -->
+            <LinearLayout
+                android:id="@+id/layout_publisher"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:orientation="horizontal"
+                app:layout_constraintStart_toEndOf="@+id/layout_author"
+                app:layout_constraintTop_toTopOf="@+id/layout_author">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/string_publisher"
+                    android:textColor="@color/colorOnBackgroundLight" />
+
+                <TextView
+                    style="@style/EllipsizeTextView"
+                    android:layout_width="@dimen/ellipsize_maxWidth"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:text="@{book.publisher}"
+                    android:textColor="@color/colorOnBackgroundLight"
+                    tools:text="오렌지미디어" />
+            </LinearLayout>
+        </android.support.constraint.ConstraintLayout>
+
+    </android.support.v7.widget.CardView>
+</layout>

@@ -17,4 +17,21 @@
 
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
+    <style name="EllipsizeTextView">
+        <item name="android:singleLine">true</item>
+        <item name="android:ellipsize">end</item>
+    </style>
+
+    <style name="EditTextStyle" parent="Widget.AppCompat.EditText">
+        <item name="colorControlNormal">@color/colorPrimary</item>
+        <item name="colorControlActivated">@color/colorPrimaryLight</item>
+    </style>
+
+    <style name="ButtonLogin" parent="Widget.AppCompat.Button">
+        <item name="android:background">@color/colorPrimary</item>
+        <item name="android:text">@string/string_login</item>
+        <item name="android:textColor">@color/colorOnAccent</item>
+        <itme name="android:textSize">14sp</itme>
+    </style>
+
 </resources>
